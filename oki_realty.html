@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>大木不動産 | OKI REALTY</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        navy: '#1a2332',
+                        gold: '#B8956A',
+                        cream: '#F8F6F2',
+                        steel: '#4a5568',
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif JP', 'serif'],
+                        en: ['Cormorant Garamond', 'serif'],
+                        sans: ['Noto Sans JP', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        .fade-in { opacity: 0; transform: translateY(20px); transition: opacity 0.7s ease, transform 0.7s ease; }
+        .fade-in.visible { opacity: 1; transform: translateY(0); }
+        .table-row-hover:hover { background: rgba(26,35,50,0.03); }
+        .status-badge { display: inline-flex; align-items: center; gap: 4px; padding: 2px 10px; border-radius: 2px; font-size: 11px; letter-spacing: 0.1em; font-family: 'Cormorant Garamond', serif; }
+        .status-closed { background: #1a2332; color: #F8F6F2; }
+        .status-pending { background: #B8956A; color: #fff; }
+        .scroll-ticker { display: flex; white-space: nowrap; animation: ticker 30s linear infinite; }
+        @keyframes ticker { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+        .underline-link { position: relative; }
+        .underline-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1px; background: #B8956A; transition: width 0.3s ease; }
+        .underline-link:hover::after { width: 100%; }
+    </style>
+</head>
+<body class="bg-cream text-navy font-sans antialiased">
+
+    <!-- Header -->
+    <header class="fixed top-0 w-full z-50 bg-navy text-cream">
+        <div class="max-w-screen-xl mx-auto px-6 lg:px-12 py-4 flex justify-between items-center">
+            <div>
+                <a href="oki_realty.html" class="flex flex-col leading-none">
+                    <span class="font-en text-2xl lg:text-3xl tracking-[0.12em] font-semibold text-white">OKI REALTY</span>
+                    <span class="text-[9px] tracking-[0.35em] text-cream/50 font-sans font-light mt-0.5 uppercase">大木不動産</span>
+                </a>
+            </div>
+            <nav class="flex items-center gap-6 lg:gap-10 text-[11px] tracking-[0.25em] uppercase font-sans font-light">
+                <a href="#transactions" class="text-cream/70 hover:text-gold transition-colors hidden lg:block">取引実績</a>
+                <a href="#wanted" class="text-cream/70 hover:text-gold transition-colors hidden lg:block">物件募集</a>
+                <a href="#contact" class="text-cream/70 hover:text-gold transition-colors hidden lg:block">お問い合わせ</a>
+                <a href="index.html" class="ml-4 border border-cream/20 hover:border-gold hover:text-gold transition-colors px-4 py-2 text-[10px] tracking-[0.2em]">
+                    ← BR&amp;CO.
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Ticker Bar -->
+    <div class="fixed top-[60px] lg:top-[65px] w-full z-40 bg-gold/90 overflow-hidden py-2">
+        <div class="scroll-ticker">
+            <span class="inline-block px-8 text-[10px] tracking-[0.3em] font-en text-navy/80 uppercase">
+                現在、事業用地・投資物件・ハイエンドレジデンスの売却情報を積極的にお待ちしております &nbsp;|&nbsp;
+                土地・建物・収益物件 お気軽にご相談ください &nbsp;|&nbsp;
+                ACTIVELY SEEKING LAND &amp; INVESTMENT PROPERTIES IN FUKUOKA &nbsp;|&nbsp;
+                CONFIDENTIAL INQUIRIES WELCOME &nbsp;|&nbsp;
+                現在、事業用地・投資物件・ハイエンドレジデンスの売却情報を積極的にお待ちしております &nbsp;|&nbsp;
+                土地・建物・収益物件 お気軽にご相談ください &nbsp;|&nbsp;
+                ACTIVELY SEEKING LAND &amp; INVESTMENT PROPERTIES IN FUKUOKA &nbsp;|&nbsp;
+                CONFIDENTIAL INQUIRIES WELCOME &nbsp;|&nbsp;
+            </span>
+        </div>
+    </div>
+
+    <!-- Hero -->
+    <section class="relative bg-navy text-cream pt-[120px] lg:pt-[130px] pb-20 lg:pb-32 px-6 lg:px-12 overflow-hidden">
+        <div class="absolute inset-0 opacity-5">
+            <div class="absolute top-0 right-0 w-[60%] h-full" style="background: radial-gradient(ellipse at right top, #B8956A 0%, transparent 70%);"></div>
+        </div>
+        <div class="max-w-screen-xl mx-auto relative z-10">
+            <div class="max-w-3xl">
+                <p class="font-en text-gold text-sm tracking-[0.4em] uppercase mb-6 fade-in">Boutique Real Estate Brokerage</p>
+                <h1 class="font-en font-light text-5xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8 fade-in" style="transition-delay:0.1s">
+                    The Right<br/>Property.<br/><em class="italic text-gold">Delivered.</em>
+                </h1>
+                <p class="font-serif text-sm lg:text-base leading-loose tracking-widest text-cream/70 max-w-lg fade-in" style="transition-delay:0.2s">
+                    福岡を拠点に、法人事業用地・投資物件・ハイエンドレジデンスを中心に、<br class="hidden lg:block"/>
+                    国内外の厳選された不動産情報をお届けします。
+                </p>
+                <div class="mt-10 flex gap-4 fade-in" style="transition-delay:0.3s">
+                    <a href="#wanted" class="bg-gold text-navy px-8 py-4 text-xs tracking-[0.25em] uppercase font-sans font-medium hover:bg-gold/80 transition-colors">
+                        物件情報を提供する
+                    </a>
+                    <a href="#transactions" class="border border-cream/20 text-cream px-8 py-4 text-xs tracking-[0.25em] uppercase font-sans font-light hover:border-gold hover:text-gold transition-colors">
+                        取引実績を見る
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Stats Row -->
+        <div class="max-w-screen-xl mx-auto mt-20 pt-10 border-t border-cream/10 grid grid-cols-2 lg:grid-cols-4 gap-8 fade-in" style="transition-delay:0.4s">
+            <div>
+                <div class="font-en text-4xl lg:text-5xl font-light text-gold">¥5.2B+</div>
+                <div class="text-[10px] tracking-[0.3em] text-cream/50 uppercase font-sans mt-1">取引総額 (Dummy)</div>
+            </div>
+            <div>
+                <div class="font-en text-4xl lg:text-5xl font-light text-gold">18+</div>
+                <div class="text-[10px] tracking-[0.3em] text-cream/50 uppercase font-sans mt-1">成約件数 (Dummy)</div>
+            </div>
+            <div>
+                <div class="font-en text-4xl lg:text-5xl font-light text-gold">¥10M</div>
+                <div class="text-[10px] tracking-[0.3em] text-cream/50 uppercase font-sans mt-1">最小取引規模</div>
+            </div>
+            <div>
+                <div class="font-en text-4xl lg:text-5xl font-light text-gold">¥20B</div>
+                <div class="text-[10px] tracking-[0.3em] text-cream/50 uppercase font-sans mt-1">最大取引規模</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transaction Log -->
+    <section id="transactions" class="py-20 lg:py-32 px-6 lg:px-12 bg-cream">
+        <div class="max-w-screen-xl mx-auto">
+            <div class="flex justify-between items-end mb-12 fade-in">
+                <div>
+                    <p class="font-en text-gold text-xs tracking-[0.4em] uppercase mb-3">Track Record</p>
+                    <h2 class="font-en text-3xl lg:text-5xl font-light tracking-tight text-navy">取引実績</h2>
+                </div>
+                <div class="hidden lg:block text-right">
+                    <p class="text-[11px] tracking-[0.2em] text-navy/40 font-sans uppercase">※ 本データはダミーです</p>
+                    <p class="text-[11px] tracking-[0.2em] text-navy/40 font-sans uppercase">実績は随時更新予定</p>
+                </div>
+            </div>
+
+            <!-- Disclaimer -->
+            <div class="mb-8 p-4 border border-gold/20 bg-gold/5 fade-in">
+                <p class="text-xs tracking-widest text-navy/60 font-serif leading-loose">
+                    ※ 以下はダミーデータです。実際の取引実績は順次掲載予定です。成約済み案件については、売主・買主様のプライバシーに配慮し、詳細を一部省略して掲載いたします。
+                </p>
+            </div>
+
+            <!-- Desktop Table -->
+            <div class="hidden lg:block fade-in">
+                <table class="w-full text-sm font-sans">
+                    <thead>
+                        <tr class="border-b-2 border-navy">
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal pr-6">No.</th>
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal pr-6">物件種別</th>
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal pr-6">所在地</th>
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal pr-6">面積</th>
+                            <th class="text-right py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal pr-6">取引価格</th>
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal pr-6">取引種別</th>
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal">成約時期</th>
+                            <th class="text-left py-4 text-[10px] tracking-[0.3em] uppercase text-navy/50 font-normal">ステータス</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">01</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">高級レジデンス</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">福岡市中央区薬院</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">198㎡</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥210,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（買主側）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">2025.02</td>
+                            <td class="py-5"><span class="status-badge status-closed">成約済</span></td>
+                        </tr>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">02</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">商業用地</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">福岡市博多区住吉</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">423㎡</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥480,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（売主側）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">2025.01</td>
+                            <td class="py-5"><span class="status-badge status-closed">成約済</span></td>
+                        </tr>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">03</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">投資用マンション</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">福岡市南区大橋</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">68㎡ × 8戸</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥320,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（両手）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">2024.11</td>
+                            <td class="py-5"><span class="status-badge status-closed">成約済</span></td>
+                        </tr>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">04</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">事業用地</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">糸島市前原</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">1,240㎡</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥260,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（買主側）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">2024.09</td>
+                            <td class="py-5"><span class="status-badge status-closed">成約済</span></td>
+                        </tr>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">05</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">ビル・一棟</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">北九州市小倉北区</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">895㎡ / 5F</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥620,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（売主側）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">2024.08</td>
+                            <td class="py-5"><span class="status-badge status-closed">成約済</span></td>
+                        </tr>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">06</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">リゾート用地</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">宮崎県日南市</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">3,800㎡</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥190,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（買主側）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">2024.07</td>
+                            <td class="py-5"><span class="status-badge status-closed">成約済</span></td>
+                        </tr>
+                        <tr class="border-b border-navy/8 table-row-hover transition-colors bg-gold/[0.03]">
+                            <td class="py-5 pr-6 font-en text-navy/30 text-xs">07</td>
+                            <td class="py-5 pr-6 font-serif tracking-widest">ハイエンド戸建</td>
+                            <td class="py-5 pr-6 text-navy/70 tracking-wider">福岡市中央区桜坂</td>
+                            <td class="py-5 pr-6 text-navy/70 font-en">245㎡</td>
+                            <td class="py-5 pr-6 text-right font-en font-medium text-navy">¥380,000,000</td>
+                            <td class="py-5 pr-6 text-navy/60 text-xs tracking-wider">売買仲介（両手）</td>
+                            <td class="py-5 pr-6 font-en text-navy/50 text-xs">交渉中</td>
+                            <td class="py-5"><span class="status-badge status-pending">交渉中</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Mobile Cards -->
+            <div class="lg:hidden space-y-4 fade-in">
+                <!-- Card Template -->
+                <div class="border border-navy/10 p-5 bg-white">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="font-serif tracking-widest text-sm">高級レジデンス</p>
+                            <p class="text-xs text-navy/50 tracking-wider mt-1">福岡市中央区薬院 / 198㎡</p>
+                        </div>
+                        <span class="status-badge status-closed">成約済</span>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-[10px] text-navy/40 tracking-widest uppercase font-en">Price</p>
+                            <p class="font-en text-lg font-medium">¥210,000,000</p>
+                        </div>
+                        <p class="font-en text-xs text-navy/40">2025.02</p>
+                    </div>
+                </div>
+                <div class="border border-navy/10 p-5 bg-white">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="font-serif tracking-widest text-sm">商業用地</p>
+                            <p class="text-xs text-navy/50 tracking-wider mt-1">福岡市博多区住吉 / 423㎡</p>
+                        </div>
+                        <span class="status-badge status-closed">成約済</span>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-[10px] text-navy/40 tracking-widest uppercase font-en">Price</p>
+                            <p class="font-en text-lg font-medium">¥480,000,000</p>
+                        </div>
+                        <p class="font-en text-xs text-navy/40">2025.01</p>
+                    </div>
+                </div>
+                <div class="border border-navy/10 p-5 bg-white">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="font-serif tracking-widest text-sm">投資用マンション</p>
+                            <p class="text-xs text-navy/50 tracking-wider mt-1">福岡市南区大橋 / 68㎡×8戸</p>
+                        </div>
+                        <span class="status-badge status-closed">成約済</span>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-[10px] text-navy/40 tracking-widest uppercase font-en">Price</p>
+                            <p class="font-en text-lg font-medium">¥320,000,000</p>
+                        </div>
+                        <p class="font-en text-xs text-navy/40">2024.11</p>
+                    </div>
+                </div>
+                <div class="border border-gold/30 p-5 bg-gold/5">
+                    <div class="flex justify-between items-start mb-3">
+                        <div>
+                            <p class="font-serif tracking-widest text-sm">ハイエンド戸建</p>
+                            <p class="text-xs text-navy/50 tracking-wider mt-1">福岡市中央区桜坂 / 245㎡</p>
+                        </div>
+                        <span class="status-badge status-pending">交渉中</span>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <p class="text-[10px] text-navy/40 tracking-widest uppercase font-en">Price</p>
+                            <p class="font-en text-lg font-medium">¥380,000,000</p>
+                        </div>
+                        <p class="font-en text-xs text-navy/40">交渉中</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wanted Section -->
+    <section id="wanted" class="bg-navy text-cream py-20 lg:py-32 px-6 lg:px-12 relative overflow-hidden">
+        <div class="absolute top-0 left-0 w-[40%] h-full opacity-5" style="background: radial-gradient(ellipse at left center, #B8956A 0%, transparent 60%);"></div>
+        <div class="max-w-screen-xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
+                <div class="fade-in">
+                    <p class="font-en text-gold text-xs tracking-[0.4em] uppercase mb-6">Actively Seeking</p>
+                    <h2 class="font-en font-light text-4xl lg:text-6xl leading-tight tracking-tight mb-8">
+                        土地・建物の<br/>売却情報、<br/><em class="italic text-gold">お待ちしています。</em>
+                    </h2>
+                    <p class="font-serif text-sm leading-loose tracking-widest text-cream/70 mb-8">
+                        大木不動産では、以下に該当する物件情報を積極的に募集しております。<br/>
+                        オフマーケット・秘密厳守にて対応いたします。<br/>
+                        まずはお気軽にご相談ください。
+                    </p>
+                    <a href="#contact" class="inline-block bg-gold text-navy px-8 py-4 text-xs tracking-[0.3em] uppercase font-sans font-medium hover:bg-gold/80 transition-colors">
+                        無料相談を申し込む
+                    </a>
+                </div>
+
+                <div class="space-y-0 fade-in" style="transition-delay:0.15s">
+                    <div class="border-t border-cream/10 py-6">
+                        <div class="flex items-start gap-4">
+                            <span class="font-en text-gold text-2xl font-light leading-none mt-1">01</span>
+                            <div>
+                                <h3 class="font-serif tracking-widest text-base mb-2">事業用地・開発用地</h3>
+                                <p class="text-xs leading-loose text-cream/50 tracking-widest font-sans">
+                                    100坪以上の土地（更地・古家あり問わず）。<br/>
+                                    福岡市内および近郊、九州各都市を対象エリアとします。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-cream/10 py-6">
+                        <div class="flex items-start gap-4">
+                            <span class="font-en text-gold text-2xl font-light leading-none mt-1">02</span>
+                            <div>
+                                <h3 class="font-serif tracking-widest text-base mb-2">投資用収益物件</h3>
+                                <p class="text-xs leading-loose text-cream/50 tracking-widest font-sans">
+                                    利回り4%以上の一棟マンション・ビル・商業施設。<br/>
+                                    取引規模：1,000万円〜200億円。国内外投資家への紹介が可能です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-cream/10 py-6">
+                        <div class="flex items-start gap-4">
+                            <span class="font-en text-gold text-2xl font-light leading-none mt-1">03</span>
+                            <div>
+                                <h3 class="font-serif tracking-widest text-base mb-2">ハイエンドレジデンス・旅館・料亭</h3>
+                                <p class="text-xs leading-loose text-cream/50 tracking-widest font-sans">
+                                    歴史ある料亭・旅館・ラグジュアリー住宅の事業承継案件。<br/>
+                                    BR&amp;CO.グループとしての再生・開発提案も可能です。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="border-t border-b border-cream/10 py-6">
+                        <div class="flex items-start gap-4">
+                            <span class="font-en text-gold text-2xl font-light leading-none mt-1">04</span>
+                            <div>
+                                <h3 class="font-serif tracking-widest text-base mb-2">リゾート・アウトドア用地</h3>
+                                <p class="text-xs leading-loose text-cream/50 tracking-widest font-sans">
+                                    海岸・山間部・温泉地など、自然環境に恵まれた用地。<br/>
+                                    グランピング・オーベルジュ・高級別荘地としての開発を検討中。
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 lg:py-32 px-6 lg:px-12 bg-cream">
+        <div class="max-w-screen-xl mx-auto fade-in">
+            <div class="max-w-2xl mx-auto text-center">
+                <p class="font-en text-gold text-xs tracking-[0.4em] uppercase mb-6">Get In Touch</p>
+                <h2 class="font-en font-light text-4xl lg:text-5xl tracking-tight mb-8 text-navy">
+                    ご相談・お問い合わせ
+                </h2>
+                <p class="font-serif text-sm leading-loose tracking-widest text-navy/60 mb-10">
+                    物件売却のご相談、購入・投資に関するお問い合わせ、<br/>
+                    その他ご不明な点はお気軽にご連絡ください。<br/>
+                    内容は厳密に秘密厳守にて対応いたします。
+                </p>
+
+                <div class="space-y-4 mb-12">
+                    <div class="flex items-center justify-center gap-3 text-navy/50 text-xs tracking-widest font-sans">
+                        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                        <a href="mailto:info@boutiqueresidenceandco.com" class="underline-link hover:text-gold transition-colors">
+                            info@boutiqueresidenceandco.com
+                        </a>
+                    </div>
+                    <div class="flex items-center justify-center gap-3 text-navy/50 text-xs tracking-widest font-sans">
+                        <svg class="w-4 h-4 text-gold" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"/></svg>
+                        <span>〒810-0031 福岡市中央区谷1-2-46-208</span>
+                    </div>
+                </div>
+
+                <div class="border-t border-navy/10 pt-10">
+                    <p class="text-[10px] tracking-[0.3em] text-navy/30 uppercase font-en mb-4">A Member of</p>
+                    <a href="index.html" class="font-en text-2xl tracking-[0.15em] uppercase text-navy hover:text-gold transition-colors">
+                        BR&amp;CO.
+                    </a>
+                    <p class="text-[10px] tracking-[0.2em] text-navy/30 font-sans mt-2">Boutique Residence &amp; Co. 株式会社</p>
+                    <p class="text-[10px] tracking-[0.2em] text-navy/30 font-sans">宅地建物取引業 福岡県知事（1）第21165号</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-navy text-cream py-8 px-6 lg:px-12">
+        <div class="max-w-screen-xl mx-auto flex flex-col lg:flex-row justify-between items-center gap-4">
+            <span class="font-en text-sm tracking-[0.2em] uppercase text-cream/40">OKI REALTY / 大木不動産</span>
+            <span class="font-en text-[10px] tracking-widest text-cream/20 uppercase">&copy; 2026 Boutique Residence &amp; Co. All Rights Reserved.</span>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-in on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+    </script>
+</body>
+</html>

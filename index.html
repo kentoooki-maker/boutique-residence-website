@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BR&CO. | A Curated Residence for the Discerning Few.</title>
+    <meta name="description" content="物語ある不動産を、世界の目利きへ。">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        base: '#F8F6F2',
+                        accent: '#1a2332',
+                        gold: '#B8956A'
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif JP', 'serif'],
+                        en: ['Cormorant Garamond', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="bg-base text-accent font-serif antialiased selection:bg-gold selection:text-base">
+
+    <!-- Header / Nav -->
+    <nav class="fixed top-0 w-full z-50 p-6 lg:px-12 lg:py-6 flex justify-between items-center transition-all duration-700" id="navbar">
+        <a href="#" class="text-xl lg:text-3xl font-en tracking-[0.15em] uppercase text-white mix-blend-difference nav-text transition-colors relative z-10">
+            BR&CO.
+        </a>
+        <div class="flex gap-4 text-xs lg:text-sm font-en tracking-[0.2em] text-white mix-blend-difference nav-text transition-colors">
+            <a href="index_en.html" class="hover:text-gold transition-colors">EN</a>
+            <span class="opacity-30">/</span>
+            <span class="opacity-30 cursor-default">JP</span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative w-full h-screen flex items-center justify-center overflow-hidden bg-accent">
+        <div class="absolute inset-0 z-0 bg-accent">
+            <img src="assets/images/1.jpg" alt="Serene Architecture" class="w-full h-full object-cover object-center opacity-80 scale-100 transform transition-transform duration-[20s] ease-out hover:scale-105 parallax-bg"/>
+        </div>
+        <div class="relative z-10 text-center text-base px-6 mt-12">
+            <h1 class="text-4xl lg:text-5xl lg:leading-loose font-en font-light tracking-[0.15em] fade-in-up delay-100">Your Japan, Tailored</h1>
+        </div>
+        <!-- Scroll Indicator -->
+        <div class="absolute bottom-12 left-1/2 -translate-x-1/2 flex flex-col items-center gap-4 z-10 fade-in-up delay-300">
+            <span class="block w-[1px] h-16 bg-white/30 overflow-hidden relative">
+                <span class="block w-full h-full bg-white absolute top-0 left-0 animate-scroll-line"></span>
+            </span>
+        </div>
+    </header>
+
+
+    <!-- Business Pillars -->
+    <section class="py-16 lg:py-24 px-6 lg:px-12 bg-[#F3F0EA]">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="font-en text-gold text-lg lg:text-xl tracking-[0.3em] mb-12 lg:mb-16 fade-in-up text-center uppercase">Our Expertise</h2>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-16">
+                <!-- Pillar 1 -->
+                <div class="flex flex-col gap-6 fade-in-up">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="assets/images/ryotei.png" alt="自社開発事業 - 料亭リノベーション" class="w-full h-full object-cover grayscale-[20%] hover:scale-105 transition-transform duration-[1.5s] ease-out">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <span class="font-en text-gold text-xs tracking-[0.2em] block mb-2 uppercase">01. Development</span>
+                        <h3 class="text-xl lg:text-2xl tracking-widest mb-4 font-light">自社開発事業</h3>
+                        <p class="text-xs lg:text-sm leading-loose tracking-widest text-accent/80 mb-4">
+                            自社で物件を取得・開発し、会員制ラウンジやオーベルジュ等のプライベートクラブ・ラグジュアリー施設として運営を行います。<br/>
+                            既存料亭や旅館等の事業承継など、モダンと伝統を掛け合わせたオリジナルな開発により、日本文化を体験するゲートウェイを構築します。
+                        </p>
+                        <div class="text-xs lg:text-sm leading-loose tracking-widest text-accent/80 border-t border-accent/10 pt-4 mt-auto">
+                            <span class="block text-accent/60 mb-2 text-[10px] tracking-[0.3em] font-en uppercase">Featured Works</span>
+                            <ul class="space-y-1">
+                                <li>・ <a href="project_brf.html" class="hover:text-gold transition-colors">Boutique Residence Fukuoka</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 2 -->
+                <div class="flex flex-col gap-6 fade-in-up delay-100">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="assets/images/hero.png" alt="プロデュース事業" class="w-full h-full object-cover grayscale-[40%] hover:scale-105 transition-transform duration-[1.5s] ease-out">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <span class="font-en text-gold text-xs tracking-[0.2em] block mb-2 uppercase">02. Produce</span>
+                        <h3 class="text-xl lg:text-2xl tracking-widest mb-4 font-light">プロデュース事業</h3>
+                        <p class="text-xs lg:text-sm leading-loose tracking-widest text-accent/80 mb-4">
+                            不動産オーナーや投資家向けに、企画から運営までをトータルプロデュース。<br/>
+                            外部のトップクリエイターと協業し、不動産価値の創造に加え、オーナー様の美意識や地域のコンテクスト（文脈）を尊重したエンド・トゥ・エンドのサービスを提供します。
+                        </p>
+                        <div class="text-xs lg:text-sm leading-loose tracking-widest text-accent/80 border-t border-accent/10 pt-4 mt-auto">
+                            <span class="block text-accent/60 mb-2 text-[10px] tracking-[0.3em] font-en uppercase">Featured Works</span>
+                            <ul class="space-y-1">
+                                <li>・ <a href="project_houseo.html" class="hover:text-gold transition-colors">HouseO</a></li>
+                                <li>・ <a href="project_overground.html" class="hover:text-gold transition-colors">Overground (Arts, Education)</a></li>
+                                <li>・ <a href="project_kumamoto.html" class="hover:text-gold transition-colors">Kumamoto (Work,Live,Nature)</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pillar 3 -->
+                <div class="flex flex-col gap-6 fade-in-up delay-200">
+                    <div class="aspect-[4/3] w-full overflow-hidden">
+                        <img src="assets/images/dev.png" alt="不動産仲介事業" class="w-full h-full object-cover grayscale-[30%] hover:scale-105 transition-transform duration-[1.5s] ease-out">
+                    </div>
+                    <div class="flex flex-col flex-grow">
+                        <span class="font-en text-gold text-xs tracking-[0.2em] block mb-2 uppercase">03. Brokerage</span>
+                        <h3 class="text-xl lg:text-2xl tracking-widest mb-4 font-light">不動産仲介事業</h3>
+                        <p class="text-xs lg:text-sm leading-loose tracking-widest text-accent/80 mb-4">
+                            国内外の不動産仲介をはじめ、当社独自の強力なネットワークから、市場に出回らないオフマーケットの優良な不動産情報へアクセス。<br/>
+                            法人事業用地、投資物件（1,000万円から200億円規模）、ハイエンドレジデンス、リゾート、商業領域など、持続可能な不動産価値を網羅的かつ多角的に展開しております。<br/>
+                            確かな目利きを通じ、オーナー様およびステークホルダー様の価値創造・資産構築に深く貢献いたします。
+                        </p>
+                        <div class="text-xs lg:text-sm leading-loose tracking-widest text-accent/80 border-t border-accent/10 pt-4 mt-auto">
+                            <span class="block text-accent/60 mb-2 text-[10px] tracking-[0.3em] font-en uppercase">Future Works</span>
+                            <ul class="space-y-1">
+                                <li>・ <a href="oki_realty.html" class="hover:text-gold transition-colors">大木不動産</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Projects Portfolio -->
+    <section class="py-16 lg:py-24 px-0 border-t border-accent/10 relative overflow-hidden">
+        <div class="px-6 lg:px-12 max-w-7xl mx-auto mb-8 lg:mb-12 flex justify-between items-end fade-in-up">
+            <div>
+                <h2 class="font-en text-gold text-lg lg:text-xl tracking-[0.3em] mb-4 uppercase">Selected Projects</h2>
+                <h3 class="text-2xl font-light tracking-widest">象徴的なプロジェクト・キュレーション</h3>
+            </div>
+        </div>
+        
+        <!-- Horizontal Scroll Area -->
+        <div class="flex overflow-x-auto gap-6 px-6 lg:px-12 pb-8 snap-x snap-mandatory scrollbar-hide py-4 fade-in-up delay-100 h-[50vh] lg:h-[60vh]">
+            <!-- Project Item -->
+            <div class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden">
+                <img src="assets/images/ryotei.png" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105" alt="桜坂料亭">
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/80 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
+                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">01 Heritage</span>
+                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">桜坂料亭プロジェクト</h4>
+                </div>
+            </div>
+            <!-- Project Item -->
+            <div class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden">
+                <img src="assets/images/produce.png" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[30%]" alt="仁淀川旅館">
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/80 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
+                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">02 Retreat</span>
+                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">仁淀川旅館</h4>
+                </div>
+            </div>
+            <!-- Project Item -->
+            <div class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden">
+                <div class="w-full h-full bg-[#1A1A1A] transition-transform duration-1000 group-hover:scale-105 flex items-center justify-center overflow-hidden">
+                    <img src="assets/images/broker.png" class="w-full h-full object-cover opacity-70 grayscale">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/90 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
+                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">03 Oceanfront</span>
+                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">糸島海辺物件 /<br class="hidden lg:block"/> OVGD美野島</h4>
+                </div>
+            </div>
+            <!-- Project Item -->
+            <div class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden">
+                <div class="w-full h-full bg-[#202020] transition-transform duration-1000 group-hover:scale-105 flex items-center justify-center overflow-hidden">
+                     <img src="assets/images/dev.png" class="w-full h-full object-cover opacity-80 mix-blend-luminosity">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/90 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
+                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">04 Global</span>
+                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">NY Brooklyn<br/>Loft</h4>
+                </div>
+            </div>
+            <!-- Project Item (Boutique Residence & Co.) -->
+            <div class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden">
+                <img src="assets/images/hero_new.png" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[30%]" alt="Boutique Residence & Co.">
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/90 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
+                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">05 Produce</span>
+                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest uppercase font-en">Boutique Residence & Co.</h4>
+                </div>
+            </div>
+            <!-- Project Item (福岡市中央区O邸) -->
+            <div class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden">
+                <div class="w-full h-full bg-[#1A1A1A] transition-transform duration-1000 group-hover:scale-105 flex items-center justify-center overflow-hidden">
+                    <img src="assets/images/ryotei.png" class="w-full h-full object-cover opacity-80 grayscale">
+                </div>
+                <div class="absolute inset-0 bg-gradient-to-t from-accent/90 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
+                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">06 Produce</span>
+                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">福岡市中央区O邸</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact & Footer -->
+    <footer class="bg-accent text-base py-16 lg:py-24 px-6 lg:px-12 border-t border-white/10 text-center lg:text-left relative overflow-hidden">
+        <div class="max-w-7xl mx-auto flex flex-col lg:flex-row justify-between items-center lg:items-end gap-16 lg:gap-0 z-10 relative fade-in-up">
+            
+            <div class="space-y-6 lg:w-1/2">
+                <h2 class="font-en text-gold text-sm tracking-[0.3em] uppercase">Invitation & Inquiry</h2>
+                <h3 class="text-2xl lg:text-3xl font-light tracking-widest mb-8">コンシェルジュデスク</h3>
+                <p class="text-sm lg:text-base leading-loose tracking-widest text-base/70">
+                    弊社プロパティに関するプライベートなご相談、あるいは事業承継・プロデュースに<br class="hidden lg:block"/>
+                    関するお問い合わせは、以下コンシェルジュデスクにて承っております。
+                </p>
+                <a href="mailto:info@boutiqueresidenceandco.com" class="inline-block font-en text-base lg:text-lg tracking-widest border-b border-gold/50 pb-2 hover:border-gold transition-colors text-white mt-4">
+                    info@boutiqueresidenceandco.com
+                </a>
+            </div>
+
+            <div class="lg:text-right flex flex-col items-center lg:items-end space-y-4">
+                <div class="text-2xl lg:text-3xl font-en tracking-[0.15em] uppercase text-white mb-2">
+                    BR&CO.
+                </div>
+                
+                <!-- Corporate Links -->
+                <div class="flex gap-6 mb-8 text-xs tracking-[0.2em] font-en uppercase border-b border-white/10 pb-6 w-full justify-center lg:justify-end">
+                    <a href="mission.html" class="hover:text-gold transition-colors text-white/80">Mission & Value</a>
+                    <a href="representative.html" class="hover:text-gold transition-colors text-white/80">Representative</a>
+                    <a href="news.html" class="hover:text-gold transition-colors text-white/80">News</a>
+                </div>
+
+                <p class="text-xs lg:text-sm tracking-widest text-base/60 leading-loose mt-4">
+                    Boutique Residence & Co. 株式会社<br/>
+                    〒810-0031<br/>
+                    福岡市中央区谷1-2-46-208
+                </p>
+                <p class="text-xs tracking-widest text-base/40 mt-6">
+                    宅地建物取引業 福岡県知事（1） 第21165号
+                </p>
+                <div class="mt-8 flex justify-center lg:justify-end items-center gap-3">
+                    <span class="font-en text-[10px] tracking-widest uppercase text-white/50">Follow us on</span>
+                    <a href="https://www.instagram.com/boutiqueresidenceandco?igsh=aDFvYjR0NGdyaDJq&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-white/50 hover:text-gold transition-colors">
+                        <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                    </a>
+                </div>
+                <div class="font-en text-[10px] tracking-widest text-base/30 mt-6 uppercase">
+                    &copy; 2026 Boutique Residence & Co. All Rights Reserved.
+                </div>
+            </div>
+            
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
