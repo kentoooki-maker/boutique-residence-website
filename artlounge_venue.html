@@ -1,0 +1,542 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ART LOUNGE at OVERGROUND | BR&CO.</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        dark: '#0e1218',
+                        surface: '#161d27',
+                        cream: '#F8F6F2',
+                        gold: '#B8956A',
+                        muted: '#8a8f99'
+                    },
+                    fontFamily: {
+                        serif: ['Noto Serif JP', 'serif'],
+                        en: ['Cormorant Garamond', 'serif']
+                    }
+                }
+            }
+        }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Noto+Serif+JP:wght@300;400;500&display=swap" rel="stylesheet">
+    <style>
+        html { scroll-behavior: smooth; }
+
+        .fade-up {
+            opacity: 0;
+            transform: translateY(32px);
+            transition: opacity 0.9s ease, transform 0.9s ease;
+        }
+        .fade-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .hero-text {
+            font-size: clamp(3rem, 10vw, 9rem);
+            line-height: 0.9;
+            letter-spacing: 0.08em;
+        }
+
+        .section-label {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.65rem;
+            letter-spacing: 0.35em;
+            text-transform: uppercase;
+        }
+
+        .divider {
+            width: 40px;
+            height: 1px;
+            background: #B8956A;
+            display: inline-block;
+        }
+
+        .use-card:hover .use-card-inner {
+            transform: translateY(-4px);
+        }
+        .use-card-inner {
+            transition: transform 0.5s ease;
+        }
+
+        /* Parallax-lite: hero image subtle scale on scroll */
+        .hero-img {
+            transition: transform 0.1s linear;
+            will-change: transform;
+        }
+
+        /* Nav */
+        .nav-scrolled {
+            background: rgba(14, 18, 24, 0.95) !important;
+            backdrop-filter: blur(16px);
+        }
+
+        /* Gold rule */
+        .gold-rule::before {
+            content: '';
+            display: block;
+            width: 1px;
+            height: 60px;
+            background: #B8956A;
+            margin: 0 auto 2rem;
+        }
+
+        /* Marquee */
+        @keyframes marquee {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        .marquee-track {
+            display: flex;
+            width: max-content;
+            animation: marquee 30s linear infinite;
+        }
+        .marquee-track:hover { animation-play-state: paused; }
+
+        /* Tag pill */
+        .tag {
+            border: 1px solid rgba(184,149,106,0.35);
+            color: #B8956A;
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 0.7rem;
+            letter-spacing: 0.25em;
+            padding: 0.35rem 0.9rem;
+            text-transform: uppercase;
+            display: inline-block;
+        }
+
+        /* Spec table */
+        .spec-row {
+            border-bottom: 1px solid rgba(255,255,255,0.06);
+        }
+    </style>
+</head>
+<body class="bg-dark text-cream font-serif antialiased">
+
+    <!-- Navigation -->
+    <nav id="nav" class="fixed top-0 w-full z-50 px-6 lg:px-12 py-5 flex justify-between items-center transition-all duration-500" style="background: transparent;">
+        <a href="project_artlounge.html" class="font-en tracking-[0.18em] uppercase text-cream/80 hover:text-gold transition-colors text-sm">
+            ← Art Lounge
+        </a>
+        <a href="index.html" class="font-en tracking-[0.18em] uppercase text-cream/80 hover:text-gold transition-colors text-sm">
+            BR&CO.
+        </a>
+    </nav>
+
+    <!-- ─── HERO ─── -->
+    <section class="relative w-full h-screen min-h-[600px] overflow-hidden flex items-end">
+        <div class="absolute inset-0">
+            <img src="assets/images/OVGDtop.webp"
+                 class="w-full h-full object-cover scale-105 hero-img"
+                 alt="Art Lounge at OVERGROUND">
+            <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(14,18,24,1) 0%, rgba(14,18,24,0.55) 50%, rgba(14,18,24,0.2) 100%);"></div>
+        </div>
+        <div class="relative z-10 px-6 lg:px-16 pb-16 lg:pb-24 w-full">
+            <p class="section-label text-gold mb-6 fade-up">Boutique Residence & Co. presents</p>
+            <h1 class="font-en text-cream hero-text font-light fade-up" style="transition-delay: 0.1s;">
+                ART<br>LOUNGE
+            </h1>
+            <p class="font-en text-cream/50 tracking-[0.3em] uppercase text-xs lg:text-sm mt-6 fade-up" style="transition-delay: 0.2s;">
+                at OVERGROUND, Minoshima — Fukuoka
+            </p>
+        </div>
+        <!-- scroll cue -->
+        <div class="absolute bottom-8 right-8 lg:right-12 z-10 flex flex-col items-center gap-2 opacity-50">
+            <span class="section-label text-cream text-[0.55rem]">Scroll</span>
+            <div style="width:1px; height:48px; background: rgba(248,246,242,0.4);"></div>
+        </div>
+    </section>
+
+    <!-- ─── MARQUEE ─── -->
+    <div class="overflow-hidden py-4" style="background:#0e1218; border-top:1px solid rgba(184,149,106,0.15); border-bottom:1px solid rgba(184,149,106,0.15);">
+        <div class="marquee-track">
+            <span class="section-label text-gold/50 px-10">Pop-up Store</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Art Exhibition</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Live Music</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Private Event</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Fashion Show</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Architecture</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <!-- duplicate for seamless loop -->
+            <span class="section-label text-gold/50 px-10">Pop-up Store</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Art Exhibition</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Live Music</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Private Event</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Fashion Show</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+            <span class="section-label text-gold/50 px-10">Architecture</span>
+            <span class="section-label text-cream/20 px-4">×</span>
+        </div>
+    </div>
+
+    <!-- ─── ABOUT / SPACE CHARACTER ─── -->
+    <section class="px-6 lg:px-24 py-24 lg:py-36">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+                <div class="lg:col-span-4 fade-up">
+                    <p class="section-label text-gold mb-6">The Space</p>
+                    <div class="divider mb-8"></div>
+                    <h2 class="font-en text-2xl lg:text-3xl font-light leading-tight tracking-wide text-cream">
+                        場の力が、<br>出会いを<br>生み出す。
+                    </h2>
+                </div>
+                <div class="lg:col-span-8 fade-up" style="transition-delay:0.15s;">
+                    <p class="text-cream/60 leading-[2.2] text-sm lg:text-base tracking-wider mb-8">
+                        博多区美野島に位置するアートギャラリー「OVERGROUND」に隣接するこのスペースは、アート・デザイン・ビジネスが自然に交差する、福岡でも稀有な場です。産業的な素材感と洗練されたインテリアが共存する空間は、単なる「箱」ではなく、訪れる人々に想像の余地を与えます。
+                    </p>
+                    <p class="text-cream/60 leading-[2.2] text-sm lg:text-base tracking-wider mb-8">
+                        起業家、クリエイター、アーティストが日常的に往来するこのエリアの文脈を活かし、BR&CO.がプロデュースするアートクラブラウンジとして現在運営を行っています。開放感と独自性を兼ね備えた空間は、通常の会場では実現しえない「体験の密度」を可能にします。
+                    </p>
+                    <p class="text-cream/60 leading-[2.2] text-sm lg:text-base tracking-wider">
+                        "本物を知る人が集まる場"として機能させること。それがこのスペースの設計思想であり、ここで開催されるイベントに共通する価値観です。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SECTION 1: POP-UP STORE ─── -->
+    <section class="relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+            <!-- image -->
+            <div class="relative h-64 lg:h-auto overflow-hidden">
+                <img src="assets/images/OVGDpopup.JPG"
+                     class="w-full h-full object-cover grayscale-[20%] scale-105 transition-transform duration-1000 hover:scale-100"
+                     alt="Pop-up Store Image">
+                <!-- placeholder overlay label -->
+                <div class="absolute top-4 left-4 z-10">
+                    <span class="tag" style="background:rgba(14,18,24,0.6);">Image — Placeholder</span>
+                </div>
+            </div>
+            <!-- text -->
+            <div class="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24" style="background:#161d27;">
+                <p class="section-label text-gold mb-6 fade-up">01 — Use Case</p>
+                <h2 class="font-en text-3xl lg:text-4xl font-light tracking-wide text-cream mb-8 leading-tight fade-up">
+                    Pop-up Store
+                </h2>
+                <p class="text-cream/55 leading-[2.1] text-sm tracking-wider mb-8 fade-up">
+                    ギャラリーの白壁と素材感のあるインダストリアルな天井が共存するこのスペースは、ブランドの世界観を余すことなく表現するポップアップストアに最適です。通常の商業施設とは異なり、訪れること自体が特別な体験となる「場のナラティブ」が、商品との出会いをより深いものにします。
+                </p>
+                <p class="text-cream/55 leading-[2.1] text-sm tracking-wider mb-10 fade-up">
+                    ファッション、ジュエリー、プロダクトデザイン、フードなど、領域を問わず——スペースの余白が、ブランドの物語を引き立てます。
+                </p>
+                <div class="flex flex-wrap gap-2 fade-up">
+                    <span class="tag">Fashion</span>
+                    <span class="tag">Jewellery</span>
+                    <span class="tag">Design</span>
+                    <span class="tag">Food & Beverage</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SECTION 2: EVENT SPACE ─── -->
+    <section class="relative overflow-hidden">
+        <div class="grid grid-cols-1 lg:grid-cols-2 min-h-[70vh]">
+            <!-- text (left) -->
+            <div class="flex flex-col justify-center px-8 lg:px-16 py-16 lg:py-24 order-2 lg:order-1" style="background:#0e1218;">
+                <p class="section-label text-gold mb-6 fade-up">02 — Use Case</p>
+                <h2 class="font-en text-3xl lg:text-4xl font-light tracking-wide text-cream mb-8 leading-tight fade-up">
+                    Exchange &<br>Private Events
+                </h2>
+                <p class="text-cream/55 leading-[2.1] text-sm tracking-wider mb-8 fade-up">
+                    起業家、クリエイター、アーティストが垣根を越えて交わる場として、OVERGROUNDのラウンジスペースは設計されました。アートに囲まれた環境は、通常の会議室やパーティ会場では生まれにくい、創造的なエネルギーを空間に宿します。
+                </p>
+                <p class="text-cream/55 leading-[2.1] text-sm tracking-wider mb-10 fade-up">
+                    招待制のネットワーキングイベント、少人数のトークセッション、プライベートな晩餐会まで。あなたが大切にしたい人と、記憶に残るひとときを。
+                </p>
+                <div class="flex flex-wrap gap-2 fade-up">
+                    <span class="tag">Networking</span>
+                    <span class="tag">Talk Session</span>
+                    <span class="tag">Private Dinner</span>
+                    <span class="tag">Workshop</span>
+                </div>
+            </div>
+            <!-- image (right) -->
+            <div class="relative h-64 lg:h-auto overflow-hidden order-1 lg:order-2">
+                <img src="assets/images/OVGDnetworking.jpeg"
+                     class="w-full h-full object-cover grayscale-[30%] scale-105 transition-transform duration-1000 hover:scale-100"
+                     alt="Exchange Event Image">
+                <div class="absolute top-4 left-4 z-10">
+                    <span class="tag" style="background:rgba(14,18,24,0.6);">Image — Placeholder</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── USE CASES GRID ─── -->
+    <section class="px-6 lg:px-16 py-24 lg:py-36" style="background:#161d27;">
+        <div class="max-w-6xl mx-auto">
+            <div class="text-center mb-16 fade-up">
+                <p class="section-label text-gold mb-4">Suitable Occasions</p>
+                <div class="divider mx-auto mb-6"></div>
+                <h2 class="font-en text-3xl lg:text-4xl font-light text-cream tracking-wide">開催に適した利用用途</h2>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-px" style="background:rgba(184,149,106,0.12);">
+
+                <!-- Card 1: Fashion -->
+                <div class="use-card p-10 fade-up" style="background:#161d27;">
+                    <div class="use-card-inner">
+                        <p class="font-en text-gold text-5xl font-light mb-6 opacity-40">01</p>
+                        <h3 class="font-en text-lg font-light tracking-wider text-cream mb-4">Fashion<br>Pop-up</h3>
+                        <div style="width:24px; height:1px; background:#B8956A; margin-bottom:1.2rem;"></div>
+                        <p class="text-cream/45 text-xs leading-[2] tracking-wider">
+                            ファッションブランドのポップアップストア。ハイエンドなセレクトショップから新進気鋭のデザイナーまで、ブランドの個性を空間で語る場として。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 2: Art Exhibition -->
+                <div class="use-card p-10 fade-up" style="background:#161d27; transition-delay:0.08s;">
+                    <div class="use-card-inner">
+                        <p class="font-en text-gold text-5xl font-light mb-6 opacity-40">02</p>
+                        <h3 class="font-en text-lg font-light tracking-wider text-cream mb-4">Artist<br>Exhibition</h3>
+                        <div style="width:24px; height:1px; background:#B8956A; margin-bottom:1.2rem;"></div>
+                        <p class="text-cream/45 text-xs leading-[2] tracking-wider">
+                            アーティストの展示会やポップアップ展示。OVERGROUNDのギャラリー機能と連携することで、作品の文脈をより豊かに演出できます。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 3: Craftsmanship -->
+                <div class="use-card p-10 fade-up" style="background:#161d27; transition-delay:0.16s;">
+                    <div class="use-card-inner">
+                        <p class="font-en text-gold text-5xl font-light mb-6 opacity-40">03</p>
+                        <h3 class="font-en text-lg font-light tracking-wider text-cream mb-4">Craftsmanship<br>& Heritage</h3>
+                        <div style="width:24px; height:1px; background:#B8956A; margin-bottom:1.2rem;"></div>
+                        <p class="text-cream/45 text-xs leading-[2] tracking-wider">
+                            クラフトマンシップのある伝統的なものの展示会。工芸、陶芸、刀剣、漆器など——本物の価値を理解するオーディエンスに出会える場として。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 4: Architecture -->
+                <div class="use-card p-10 fade-up" style="background:#161d27; transition-delay:0.08s;">
+                    <div class="use-card-inner">
+                        <p class="font-en text-gold text-5xl font-light mb-6 opacity-40">04</p>
+                        <h3 class="font-en text-lg font-light tracking-wider text-cream mb-4">Architect's<br>Works</h3>
+                        <div style="width:24px; height:1px; background:#B8956A; margin-bottom:1.2rem;"></div>
+                        <p class="text-cream/45 text-xs leading-[2] tracking-wider">
+                            建築家の作品展。模型、ドローイング、映像を組み合わせた没入型の展示に対応。建築と空間の対話そのものが、メッセージになります。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card 5: Live Music -->
+                <div class="use-card p-10 fade-up" style="background:#161d27; transition-delay:0.16s;">
+                    <div class="use-card-inner">
+                        <p class="font-en text-gold text-5xl font-light mb-6 opacity-40">05</p>
+                        <h3 class="font-en text-lg font-light tracking-wider text-cream mb-4">Living<br>Live Music</h3>
+                        <div style="width:24px; height:1px; background:#B8956A; margin-bottom:1.2rem;"></div>
+                        <p class="text-cream/45 text-xs leading-[2] tracking-wider">
+                            ミュージシャンによる親密な音楽イベント。リビングルームで聴くような、アーティストと聴衆の距離が限りなく近い、唯一無二のライブ体験を。
+                        </p>
+                    </div>
+                </div>
+
+                <!-- Card: Custom -->
+                <div class="use-card p-10 fade-up" style="background:rgba(184,149,106,0.06); transition-delay:0.24s;">
+                    <div class="use-card-inner flex flex-col justify-between h-full">
+                        <p class="font-en text-gold text-5xl font-light mb-6 opacity-40">+</p>
+                        <div>
+                            <h3 class="font-en text-lg font-light tracking-wider text-cream/60 mb-4">Your<br>Vision</h3>
+                            <div style="width:24px; height:1px; background:rgba(184,149,106,0.4); margin-bottom:1.2rem;"></div>
+                            <p class="text-cream/35 text-xs leading-[2] tracking-wider">
+                                上記に限らず、スペースの可能性はアイデアとともにあります。ご構想についてお気軽にご相談ください。
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── PAST EVENT: QURULI ─── -->
+    <section class="relative overflow-hidden py-24 lg:py-36 px-6 lg:px-16" style="background:#0e1218;">
+        <div class="max-w-5xl mx-auto">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                <!-- image placeholder -->
+                <div class="lg:col-span-6 relative fade-up">
+                    <img src="assets/images/kururiOVGD.jpg" class="w-full h-auto block" alt="くるり Living Live at OVERGROUND">
+                    <!-- gold corner accents -->
+                    <div class="absolute top-0 left-0 w-6 h-6" style="border-top:1px solid #B8956A; border-left:1px solid #B8956A;"></div>
+                    <div class="absolute bottom-0 right-0 w-6 h-6" style="border-bottom:1px solid #B8956A; border-right:1px solid #B8956A;"></div>
+                </div>
+                <!-- text -->
+                <div class="lg:col-span-6 fade-up" style="transition-delay:0.15s;">
+                    <p class="section-label text-gold mb-6">Past Event</p>
+                    <div class="divider mb-8"></div>
+                    <h2 class="font-en text-3xl lg:text-4xl font-light text-cream tracking-wide mb-3 leading-tight">
+                        くるり<br>
+                        <span class="text-lg font-light italic text-cream/50">Living Live at OVERGROUND</span>
+                    </h2>
+                    <p class="text-cream/40 text-xs tracking-widest font-en uppercase mb-8">Fukuoka, Japan — Date TBC</p>
+                    <p class="text-cream/55 leading-[2.1] text-sm tracking-wider mb-6">
+                        日本を代表するバンド「くるり」を迎え、OVERGROUNDにて開催したプライベートライブイベント。アートギャラリーという非日常の空間で、リビングルームのような親密な距離感の中、ファンとアーティストが過ごした夜。
+                    </p>
+                    <p class="text-cream/55 leading-[2.1] text-sm tracking-wider mb-8">
+                        通常のライブハウスやコンサートホールでは生まれない、濃密な体験がここにあります。
+                    </p>
+                    <div class="flex items-center gap-3">
+                        <span class="tag" style="opacity:0.5;">Details — Pending Confirmation</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── SPECS & RESERVATION ─── -->
+    <section class="px-6 lg:px-16 py-24 lg:py-36" style="background:#161d27;">
+        <div class="max-w-4xl mx-auto">
+            <div class="text-center mb-16 fade-up">
+                <p class="section-label text-gold mb-4">Reservation & Specs</p>
+                <div class="divider mx-auto mb-6"></div>
+                <h2 class="font-en text-3xl lg:text-4xl font-light text-cream tracking-wide">ご予約・スペック</h2>
+            </div>
+
+            <!-- specs table -->
+            <div class="mb-16 fade-up">
+                <div class="spec-row py-6 grid grid-cols-2 gap-4">
+                    <p class="section-label text-cream/35 text-[0.6rem] pt-1">Space Size</p>
+                    <div>
+                        <p class="font-en text-cream text-lg font-light tracking-wider">200 — 600 <span class="text-sm text-cream/50">m²</span></p>
+                        <p class="text-cream/40 text-xs tracking-wider mt-1">（規模はご要望に応じて応相談）</p>
+                    </div>
+                </div>
+                <div class="spec-row py-6 grid grid-cols-2 gap-4">
+                    <p class="section-label text-cream/35 text-[0.6rem] pt-1">Hours</p>
+                    <div>
+                        <p class="font-en text-cream text-base font-light tracking-wider">Flexible</p>
+                        <p class="text-cream/40 text-xs tracking-wider mt-1">利用時間は予約に応じてフレキシブルに対応</p>
+                    </div>
+                </div>
+                <div class="spec-row py-6 grid grid-cols-2 gap-4">
+                    <p class="section-label text-cream/35 text-[0.6rem] pt-1">Location</p>
+                    <div>
+                        <p class="font-en text-cream text-base font-light tracking-wider">福岡市博多区美野島1-17-5 寿ビル2F</p>
+                        <p class="text-cream/40 text-xs tracking-wider mt-1 mb-4">OVER GROUND gallery 併設</p>
+                        <div class="w-full overflow-hidden" style="border:1px solid rgba(184,149,106,0.15);">
+                            <iframe
+                                src="https://maps.google.com/maps?q=OVER+GROUND+福岡市博多区美野島1-17-5+寿ビル&t=&z=17&ie=UTF8&iwloc=&output=embed&hl=ja"
+                                width="100%" height="260" style="border:0; display:block; filter:grayscale(30%) contrast(1.1);" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                            </iframe>
+                        </div>
+                    </div>
+                </div>
+                <div class="spec-row py-6 grid grid-cols-2 gap-4">
+                    <p class="section-label text-cream/35 text-[0.6rem] pt-1">Availability</p>
+                    <div>
+                        <p class="text-cream/40 text-xs tracking-wider leading-[2.1]">
+                            スペースのご利用については、ご用途・規模・日時を事前にお知らせください。内容を確認のうえ、個別にご案内いたします。
+                        </p>
+                    </div>
+                </div>
+                <div class="spec-row py-6 grid grid-cols-2 gap-4">
+                    <p class="section-label text-cream/35 text-[0.6rem] pt-1">Fee</p>
+                    <div>
+                        <p class="font-en text-cream/70 text-base font-light tracking-wider">応相談</p>
+                        <p class="text-cream/40 text-xs tracking-wider mt-1">用途・期間・規模によって個別にお見積もりいたします</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- notes + contact CTA -->
+            <div class="p-8 lg:p-10 fade-up" style="border:1px solid rgba(184,149,106,0.2); background:rgba(184,149,106,0.04);">
+                <p class="section-label text-gold mb-5 text-[0.6rem]">Notes</p>
+                <ul class="space-y-4 text-cream/45 text-xs tracking-wider leading-[2.1] mb-10">
+                    <li class="flex gap-4">
+                        <span class="text-gold/60 font-en shrink-0">—</span>
+                        <span>ご利用の詳細（用途・規模・日程）をメールにてお知らせください。内容を確認のうえ、個別にご連絡いたします。</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-gold/60 font-en shrink-0">—</span>
+                        <span>利用時間はご予約の内容に応じてフレキシブルに対応いたします。搬入・搬出の時間についても個別にご相談ください。</span>
+                    </li>
+                    <li class="flex gap-4">
+                        <span class="text-gold/60 font-en shrink-0">—</span>
+                        <span>借用可能なスペースは200㎡から600㎡までを目安としています（要相談）。レイアウトについてはご要望に応じてご提案いたします。</span>
+                    </li>
+                </ul>
+                <div style="border-top:1px solid rgba(184,149,106,0.2);" class="pt-8 flex flex-col sm:flex-row sm:items-center sm:justify-between gap-6">
+                    <div>
+                        <p class="text-cream/50 text-xs tracking-wider leading-[2]">ご利用・ご予約・ご相談はこちらまでお気軽にどうぞ。</p>
+                        <p class="text-cream/20 text-[0.6rem] tracking-widest font-en uppercase mt-1">Boutique Residence & Co.</p>
+                    </div>
+                    <a href="mailto:info@boutiqueresidenceandco.com"
+                       class="inline-block font-en tracking-[0.22em] uppercase text-sm text-dark px-8 py-3 transition-all duration-300 hover:opacity-85 shrink-0"
+                       style="background:#B8956A;">
+                        info@boutiqueresidenceandco.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ─── FOOTER ─── -->
+    <footer class="px-6 lg:px-12 py-12 text-center" style="background:#0a0d12; border-top:1px solid rgba(184,149,106,0.1);">
+        <div class="max-w-7xl mx-auto">
+            <a href="index.html" class="font-en text-2xl tracking-[0.18em] uppercase text-cream/60 hover:text-gold transition-colors">
+                BR&CO.
+            </a>
+            <div class="mt-6 flex justify-center items-center gap-3">
+                <span class="font-en text-[10px] tracking-widest uppercase text-cream/30">Follow us on</span>
+                <a href="https://www.instagram.com/boutiqueresidenceandco?igsh=aDFvYjR0NGdyaDJq&utm_source=qr" target="_blank" rel="noopener noreferrer" class="text-cream/30 hover:text-gold transition-colors">
+                    <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd" /></svg>
+                </a>
+            </div>
+            <p class="font-en text-[10px] tracking-widest text-cream/20 mt-6 uppercase">
+                &copy; 2026 Boutique Residence & Co. All Rights Reserved.
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Fade-up on scroll
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+
+        document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+
+        // Nav background on scroll
+        const nav = document.getElementById('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 60) {
+                nav.classList.add('nav-scrolled');
+            } else {
+                nav.classList.remove('nav-scrolled');
+            }
+        });
+
+        // Subtle hero parallax
+        const heroImg = document.querySelector('.hero-img');
+        window.addEventListener('scroll', () => {
+            const scrolled = window.pageYOffset;
+            if (scrolled < window.innerHeight) {
+                heroImg.style.transform = `scale(1.05) translateY(${scrolled * 0.15}px)`;
+            }
+        });
+    </script>
+</body>
+</html>
