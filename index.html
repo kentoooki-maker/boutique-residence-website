@@ -56,6 +56,18 @@
                 <span class="block w-full h-full bg-white absolute top-0 left-0 animate-scroll-line"></span>
             </span>
         </div>
+
+        <!-- Latest News Strip (inside hero / auto-populated from news-data.js) -->
+        <a id="news-strip" href="#" class="group absolute bottom-0 left-0 right-0 z-20 fade-in-up delay-300"
+           style="background: linear-gradient(to right, rgba(14,18,24,0.92), rgba(14,18,24,0.80));">
+            <div class="max-w-7xl mx-auto px-6 lg:px-12 py-3 lg:py-4 flex items-center gap-4 lg:gap-8">
+                <span class="font-en text-[0.55rem] tracking-[0.35em] uppercase text-gold shrink-0 border border-gold/40 px-2 py-0.5 hidden sm:inline">Latest News</span>
+                <span class="font-en text-[0.55rem] tracking-[0.35em] uppercase text-gold shrink-0 border border-gold/40 px-2 py-0.5 sm:hidden">News</span>
+                <time id="news-strip-date" class="font-en text-[0.6rem] tracking-widest text-white/30 shrink-0 hidden lg:block"></time>
+                <p id="news-strip-title" class="text-xs tracking-widest text-white/60 group-hover:text-white transition-colors duration-300 truncate flex-1"></p>
+                <span class="font-en text-gold text-sm shrink-0 group-hover:translate-x-1 transition-transform duration-300">→</span>
+            </div>
+        </a>
     </header>
 
 
@@ -151,14 +163,6 @@
                     <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">Boutique Residence Fukuoka</h4>
                 </div>
             </a>
-            <!-- Project Item (アートラウンジプロジェクト) -->
-            <a href="project_artlounge.html" class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden block">
-                <img src="assets/images/OVGDtop.webp" class="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105 grayscale-[20%]" alt="アートラウンジプロジェクト">
-                <div class="absolute inset-0 bg-gradient-to-t from-accent/80 via-transparent to-transparent flex flex-col justify-end p-8 lg:p-10">
-                    <span class="text-gold font-en tracking-widest text-xs lg:text-sm mb-2">02 Art Lounge</span>
-                    <h4 class="text-white text-xl lg:text-2xl font-light tracking-widest">アートラウンジプロジェクト</h4>
-                </div>
-            </a>
             <!-- Project Item (BR&CO.のための習作) -->
             <a href="project_houseo.html" class="min-w-[85vw] lg:min-w-[40vw] h-full snap-start relative group cursor-pointer overflow-hidden block">
                 <div class="w-full h-full bg-[#1A1A1A] transition-transform duration-1000 group-hover:scale-105 flex items-center justify-center overflow-hidden">
@@ -186,7 +190,6 @@
                 <ul class="text-xs tracking-widest text-base/50 space-y-2 leading-loose">
                     <li class="flex items-start gap-2"><span class="text-gold/60 shrink-0">—</span>弊社プロパティ・不動産に関するご相談</li>
                     <li class="flex items-start gap-2"><span class="text-gold/60 shrink-0">—</span>事業承継・プロデュースに関するご相談</li>
-                    <li class="flex items-start gap-2"><span class="text-gold/60 shrink-0">—</span>アートラウンジプロジェクトの利用・賃借等に関するご相談</li>
                 </ul>
                 <a href="mailto:info@boutiqueresidenceandco.com" class="inline-block font-en text-base lg:text-lg tracking-widest border-b border-gold/50 pb-2 hover:border-gold transition-colors text-white mt-4">
                     info@boutiqueresidenceandco.com
@@ -228,5 +231,19 @@
     </footer>
 
     <script src="script.js"></script>
+    <script src="news-data.js"></script>
+    <script>
+        // Latest News Strip — auto-populated from news-data.js
+        (function () {
+            if (typeof BR_NEWS === 'undefined' || !BR_NEWS.length) return;
+            const latest = BR_NEWS[0];
+            const strip  = document.getElementById('news-strip');
+            const date   = document.getElementById('news-strip-date');
+            const title  = document.getElementById('news-strip-title');
+            if (strip)  strip.href    = latest.url;
+            if (date)   date.textContent  = latest.date;
+            if (title)  title.textContent = latest.title;
+        })();
+    </script>
 </body>
 </html>
