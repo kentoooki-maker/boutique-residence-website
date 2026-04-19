@@ -25,6 +25,14 @@
     </script>
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FVVHG55W3J"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-FVVHG55W3J');
+    </script>
 </head>
 <body class="bg-base text-accent font-serif antialiased selection:bg-gold selection:text-base">
 
@@ -47,40 +55,7 @@
         <div class="max-w-4xl mx-auto">
             <h1 class="font-en text-gold text-lg lg:text-xl tracking-[0.3em] mb-16 fade-in-up uppercase text-center border-b border-accent/10 pb-8">News</h1>
             
-            <ul class="space-y-12">
-                <li class="border-b border-accent/10 pb-8 fade-in-up delay-100 flex flex-col lg:flex-row gap-4 lg:gap-12 items-baseline">
-                    <time class="font-en tracking-widest text-sm w-32 shrink-0" style="color:#1a2332">2026.04.01</time>
-                    <div>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase text-gold border border-gold/40 px-2 py-0.5 mr-2">Academia</span>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase border border-accent/30 px-2 py-0.5" style="color:#1a2332">Announcement</span>
-                        <a href="news_becat.html" class="block text-base tracking-wide leading-loose mt-3 hover:text-gold transition-colors" style="color:#1a2332">代表取締役 大木 健人、九州大学 BeCAT（ビーキャット）のプロジェクトインキュベーターに就任</a>
-                    </div>
-                </li>
-                <li class="border-b border-accent/10 pb-8 fade-in-up delay-200 flex flex-col lg:flex-row gap-4 lg:gap-12 items-baseline">
-                    <time class="font-en tracking-widest text-sm w-32 shrink-0" style="color:#1a2332">2025.07.30</time>
-                    <div>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase text-gold border border-gold/40 px-2 py-0.5 mr-2">Event</span>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase border border-accent/30 px-2 py-0.5" style="color:#1a2332">Press Release</span>
-                        <a href="news_rem_koolhaas.html" class="block text-base tracking-wide leading-loose mt-3 hover:text-gold transition-colors" style="color:#1a2332">日本建築学会大会2025に合わせて開催される「レム・コールハース講演会」の特別協賛社に決定</a>
-                    </div>
-                </li>
-                <li class="border-b border-accent/10 pb-8 fade-in-up delay-300 flex flex-col lg:flex-row gap-4 lg:gap-12 items-baseline">
-                    <time class="font-en tracking-widest text-sm w-32 shrink-0" style="color:#1a2332">2025.06.18</time>
-                    <div>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase text-gold border border-gold/40 px-2 py-0.5 mr-2">Startup</span>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase border border-accent/30 px-2 py-0.5" style="color:#1a2332">Press Release</span>
-                        <a href="news_fgn.html" class="block text-base tracking-wide leading-loose mt-3 hover:text-gold transition-colors" style="color:#1a2332">Fukuoka Growth Nextのアクセラレーションプログラム「High Growth Program」に採択されました</a>
-                    </div>
-                </li>
-                <li class="border-b border-accent/10 pb-8 fade-in-up delay-300 flex flex-col lg:flex-row gap-4 lg:gap-12 items-baseline">
-                    <time class="font-en tracking-widest text-sm w-32 shrink-0" style="color:#1a2332">2025.05.20</time>
-                    <div>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase text-gold border border-gold/40 px-2 py-0.5 mr-2">Event</span>
-                        <span class="font-en text-[9px] tracking-[0.3em] uppercase border border-accent/30 px-2 py-0.5" style="color:#1a2332">Press Release</span>
-                        <a href="news_cic.html" class="block text-base tracking-wide leading-loose mt-3 hover:text-gold transition-colors" style="color:#1a2332">CIC Fukuoka開業記念イベントにて、代表・大木健人がPitch登壇</a>
-                    </div>
-                </li>
-            </ul>
+            <ul id="news-list" class="space-y-12"></ul>
         </div>
     </main>
 
@@ -102,5 +77,24 @@
         </div>
     </footer>
     <script src="script.js"></script>
+    <script src="news-data.js"></script>
+    <script>
+        // News list — auto-populated from news-data.js
+        (function () {
+            if (typeof BR_NEWS === 'undefined') return;
+            const list = document.getElementById('news-list');
+            if (!list) return;
+            list.innerHTML = BR_NEWS.map((item, i) => `
+                <li class="border-b border-accent/10 pb-8 fade-in-up flex flex-col lg:flex-row gap-4 lg:gap-12 items-baseline">
+                    <time class="font-en tracking-widest text-sm w-32 shrink-0" style="color:#1a2332">${item.date}</time>
+                    <div>
+                        <span class="font-en text-[9px] tracking-[0.3em] uppercase text-gold border border-gold/40 px-2 py-0.5 mr-2">${item.category}</span>
+                        <span class="font-en text-[9px] tracking-[0.3em] uppercase border border-accent/30 px-2 py-0.5" style="color:#1a2332">${item.type}</span>
+                        <a href="${item.url}" class="block text-base tracking-wide leading-loose mt-3 hover:text-gold transition-colors" style="color:#1a2332">${item.title}</a>
+                    </div>
+                </li>
+            `).join('');
+        })();
+    </script>
 </body>
 </html>
