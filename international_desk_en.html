@@ -64,11 +64,11 @@
                 From pre-arrival consultation to contract signing and beyond — our dedicated bilingual team is with you at every step. We handle what others can't: off-market access, corporate relocation, and Japan's complex transaction customs, all explained in English.
             </p>
             <div class="flex flex-col sm:flex-row gap-4 fade-in-up">
-                <a href="mailto:info@boutiqueresidenceandco.com?subject=International Desk Enquiry"
+                <a href="#contact"
                    class="inline-block font-en tracking-[0.2em] uppercase text-sm border border-gold px-8 py-4 text-gold hover:bg-gold hover:text-white transition-all duration-300">
                     Talk to the Desk
                 </a>
-                <a href="mailto:info@boutiqueresidenceandco.com?subject=Online Viewing Request"
+                <a href="#contact"
                    class="inline-block font-en tracking-[0.2em] uppercase text-sm border border-white/30 px-8 py-4 text-white/70 hover:border-white hover:text-white transition-all duration-300">
                     Request an Online Viewing
                 </a>
@@ -165,27 +165,6 @@
                     Fukuoka's international finance initiative TEAM FUKUOKA has attracted 35 companies since 2020 — 19 of them Asian. Foreign and international firms now account for ~20% of new corporate arrivals annually, yet most established bilingual real estate brokers remain Tokyo-only. That gap is where we operate.
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-accent/10 fade-in-up">
-                    <div class="p-8 border-b md:border-b-0 md:border-r border-accent/10">
-                        <p class="font-en text-3xl lg:text-4xl font-light text-gold mb-3">35</p>
-                        <p class="text-xs tracking-[0.2em] uppercase text-accent/50 mb-2">International companies</p>
-                        <p class="text-xs leading-loose tracking-widest text-accent/60">attracted to Fukuoka via TEAM FUKUOKA (as of 2025), of which 19 are Asian firms.</p>
-                    </div>
-                    <div class="p-8 border-b md:border-b-0 md:border-r border-accent/10">
-                        <p class="font-en text-3xl lg:text-4xl font-light text-gold mb-3">~20%</p>
-                        <p class="text-xs tracking-[0.2em] uppercase text-accent/50 mb-2">Foreign-affiliated arrivals</p>
-                        <p class="text-xs leading-loose tracking-widest text-accent/60">of Fukuoka's new corporate relocations in FY2024 involved foreign or international companies.</p>
-                    </div>
-                    <div class="p-8">
-                        <p class="font-en text-3xl lg:text-4xl font-light text-gold mb-3">~30%</p>
-                        <p class="text-xs tracking-[0.2em] uppercase text-accent/50 mb-2">¥200M+ transactions</p>
-                        <p class="text-xs leading-loose tracking-widest text-accent/60">of high-value residential transactions in Japan's prime market involve foreign buyers or foreign-affiliated entities.</p>
-                    </div>
-                </div>
-
-                <p class="mt-8 text-xs leading-loose tracking-widest text-accent/40 fade-in-up">
-                    Sources: TEAM FUKUOKA (2025), Fukuoka City Corporate Location Data (FY2024), industry transaction data.
-                </p>
             </div>
         </section>
 
@@ -245,25 +224,98 @@
             </div>
         </section>
 
-        <!-- Contact CTA -->
-        <section class="py-16 lg:py-24 px-6 lg:px-12 bg-accent">
-            <div class="max-w-5xl mx-auto text-center">
-                <p class="text-gold text-xs tracking-[0.4em] uppercase mb-8 fade-in-up">Get in Touch</p>
-                <h2 class="text-2xl lg:text-4xl font-light tracking-widest text-white mb-8 fade-in-up">
-                    Ready to start your<br class="hidden lg:block"> Japan property search?
-                </h2>
-                <p class="text-base/60 text-sm leading-loose tracking-widest max-w-xl mx-auto mb-12 fade-in-up">
-                    Send us a brief message describing what you're looking for — location, budget, timeline, and any specific requirements. We'll respond in English within one business day.
-                </p>
-                <a href="mailto:info@boutiqueresidenceandco.com?subject=International Desk Enquiry"
-                   class="inline-block font-en tracking-[0.25em] uppercase text-sm border border-gold px-10 py-5 text-gold hover:bg-gold hover:text-white transition-all duration-300 fade-in-up">
+        <!-- Contact Form -->
+        <section id="contact" class="py-16 lg:py-24 px-6 lg:px-12 bg-accent">
+            <div class="max-w-2xl mx-auto">
+                <p class="text-gold text-xs tracking-[0.4em] uppercase mb-8 fade-in-up text-center">Get in Touch</p>
+                <h2 class="text-2xl lg:text-4xl font-light tracking-widest text-white mb-4 fade-in-up text-center">
                     Contact the International Desk
-                </a>
-                <p class="mt-8 text-base/30 text-xs tracking-widest fade-in-up font-en">
-                    info@boutiqueresidenceandco.com &nbsp;/&nbsp; English correspondence welcome
+                </h2>
+                <p class="text-base/50 text-sm leading-loose tracking-widest mb-12 fade-in-up text-center">
+                    We respond in English within one business day.
+                </p>
+
+                <!-- Netlify Form -->
+                <form id="intl-desk-form-en" name="international-desk-en" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6 fade-in-up">
+                    <input type="hidden" name="form-name" value="international-desk-en">
+                    <p class="hidden"><label>Don't fill this out: <input name="bot-field"></label></p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2">Name <span class="text-gold">*</span></label>
+                            <input type="text" name="name" required
+                                class="w-full bg-transparent border border-white/20 px-4 py-3 text-sm text-white tracking-widest placeholder-white/20 focus:border-gold focus:outline-none transition-colors"
+                                placeholder="Your name">
+                        </div>
+                        <div>
+                            <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2">Email <span class="text-gold">*</span></label>
+                            <input type="email" name="email" required
+                                class="w-full bg-transparent border border-white/20 px-4 py-3 text-sm text-white tracking-widest placeholder-white/20 focus:border-gold focus:outline-none transition-colors"
+                                placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2">Enquiry Type</label>
+                        <select name="enquiry_type"
+                            class="w-full bg-accent border border-white/20 px-4 py-3 text-sm text-white/70 tracking-widest focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer">
+                            <option value="">— Please select —</option>
+                            <option value="Rental">Rental (residential)</option>
+                            <option value="Purchase / Investment">Purchase / Investment</option>
+                            <option value="Corporate Relocation">Corporate Relocation</option>
+                            <option value="Online Viewing">Online Viewing Request</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2">Message <span class="text-gold">*</span></label>
+                        <textarea name="message" required rows="5"
+                            class="w-full bg-transparent border border-white/20 px-4 py-3 text-sm text-white tracking-widest placeholder-white/20 focus:border-gold focus:outline-none transition-colors resize-none"
+                            placeholder="Please describe your requirements — location, budget, timeline, and any specific needs."></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit"
+                            class="w-full sm:w-auto font-en tracking-[0.25em] uppercase text-sm border border-gold px-10 py-4 text-gold hover:bg-gold hover:text-white transition-all duration-300 cursor-pointer">
+                            Send Enquiry
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success message (hidden initially) -->
+                <div id="form-success-en" class="hidden text-center py-12">
+                    <p class="text-gold text-xs tracking-[0.4em] uppercase mb-4">Thank you</p>
+                    <p class="text-white text-lg font-light tracking-widest mb-4">Your message has been received.</p>
+                    <p class="text-white/50 text-sm leading-loose tracking-widest">We will be in touch within one business day.</p>
+                </div>
+
+                <p class="mt-10 text-white/20 text-xs tracking-widest text-center font-en">
+                    Or email us directly: <a href="mailto:info@boutiqueresidenceandco.com" class="hover:text-gold transition-colors">info@boutiqueresidenceandco.com</a>
                 </p>
             </div>
         </section>
+
+        <script>
+        (function() {
+            var form = document.getElementById('intl-desk-form-en');
+            var success = document.getElementById('form-success-en');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var data = new FormData(form);
+                fetch('/', { method: 'POST', body: data })
+                    .then(function() {
+                        form.style.display = 'none';
+                        success.classList.remove('hidden');
+                    })
+                    .catch(function() {
+                        // fallback: mailto
+                        window.location.href = 'mailto:info@boutiqueresidenceandco.com?subject=International%20Desk%20Enquiry';
+                    });
+            });
+        })();
+        </script>
 
     </main>
 

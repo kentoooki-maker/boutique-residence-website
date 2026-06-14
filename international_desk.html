@@ -64,11 +64,11 @@
                 来日前のご相談から、契約・入居後のサポートまで。英語に精通した専任チームが、日本の不動産慣習をわかりやすく解説しながら、お客様に寄り添います。一般ポータルに掲載されない非公開物件・法人移転・超高額帯の売買にも対応します。
             </p>
             <div class="flex flex-col sm:flex-row gap-4 fade-in-up">
-                <a href="mailto:info@boutiqueresidenceandco.com?subject=International Desk お問い合わせ"
+                <a href="#contact"
                    class="inline-block font-en tracking-[0.2em] uppercase text-sm border border-gold px-8 py-4 text-gold hover:bg-gold hover:text-white transition-all duration-300">
                     Talk to the Desk
                 </a>
-                <a href="mailto:info@boutiqueresidenceandco.com?subject=オンライン内見のご希望"
+                <a href="#contact"
                    class="inline-block font-en tracking-[0.2em] uppercase text-sm border border-white/30 px-8 py-4 text-white/70 hover:border-white hover:text-white transition-all duration-300">
                     オンライン内見を希望する
                 </a>
@@ -165,27 +165,6 @@
                     福岡市の国際金融誘致「TEAM FUKUOKA」は2020年の設立から35社を誘致し、うち19社がアジア系です。外資・外国系が年間新規立地の約20%を占める一方、東京水準の英語対応不動産窓口は福岡にはほとんど存在しません。この空白に、私たちは先手を打ちます。
                 </p>
 
-                <div class="grid grid-cols-1 md:grid-cols-3 gap-0 border border-accent/10 fade-in-up">
-                    <div class="p-8 border-b md:border-b-0 md:border-r border-accent/10">
-                        <p class="font-en text-3xl lg:text-4xl font-light text-gold mb-3">35社</p>
-                        <p class="text-xs tracking-[0.2em] uppercase text-accent/50 font-en mb-2">国際企業の誘致数</p>
-                        <p class="text-xs leading-loose tracking-widest text-accent/60">TEAM FUKUOKA（2025年時点）による誘致。うち19社がアジア系企業。</p>
-                    </div>
-                    <div class="p-8 border-b md:border-b-0 md:border-r border-accent/10">
-                        <p class="font-en text-3xl lg:text-4xl font-light text-gold mb-3">約20%</p>
-                        <p class="text-xs tracking-[0.2em] uppercase text-accent/50 font-en mb-2">外資・外国系の割合</p>
-                        <p class="text-xs leading-loose tracking-widest text-accent/60">2024年度の福岡市新規立地のうち、外資・外国系企業が占める割合。</p>
-                    </div>
-                    <div class="p-8">
-                        <p class="font-en text-3xl lg:text-4xl font-light text-gold mb-3">約30%</p>
-                        <p class="text-xs tracking-[0.2em] uppercase text-accent/50 font-en mb-2">高額帯での外国人比率</p>
-                        <p class="text-xs leading-loose tracking-widest text-accent/60">2億円超の高額取引に占める、外国人・外資系企業の取引割合（業界参考値）。</p>
-                    </div>
-                </div>
-
-                <p class="mt-8 text-xs leading-loose tracking-widest text-accent/40 fade-in-up">
-                    出典：TEAM FUKUOKA（2025）、福岡市企業立地データ（2024年度）、業界取引データ
-                </p>
             </div>
         </section>
 
@@ -250,25 +229,97 @@
             </div>
         </section>
 
-        <!-- Contact CTA -->
-        <section class="py-16 lg:py-24 px-6 lg:px-12 bg-accent">
-            <div class="max-w-5xl mx-auto text-center">
-                <p class="font-en text-gold text-xs tracking-[0.4em] uppercase mb-8 fade-in-up">お問い合わせ</p>
-                <h2 class="text-2xl lg:text-4xl font-light tracking-widest text-white mb-8 fade-in-up">
+        <!-- Contact Form -->
+        <section id="contact" class="py-16 lg:py-24 px-6 lg:px-12 bg-accent">
+            <div class="max-w-2xl mx-auto">
+                <p class="font-en text-gold text-xs tracking-[0.4em] uppercase mb-8 fade-in-up text-center">お問い合わせ</p>
+                <h2 class="text-2xl lg:text-4xl font-light tracking-widest text-white mb-4 fade-in-up text-center">
                     ご要望を、まずお聞かせください。
                 </h2>
-                <p class="text-base/60 text-sm leading-loose tracking-widest max-w-xl mx-auto mb-12 fade-in-up">
-                    希望エリア・ご予算・スケジュール・その他ご要件を、英語または日本語でお送りください。1営業日以内に英語でご返信します。
+                <p class="text-base/50 text-sm leading-loose tracking-widest mb-12 fade-in-up text-center">
+                    1営業日以内に英語または日本語でご返信します。
                 </p>
-                <a href="mailto:info@boutiqueresidenceandco.com?subject=International Desk お問い合わせ"
-                   class="inline-block font-en tracking-[0.25em] uppercase text-sm border border-gold px-10 py-5 text-gold hover:bg-gold hover:text-white transition-all duration-300 fade-in-up">
-                    デスクに問い合わせる
-                </a>
-                <p class="mt-8 text-base/30 text-xs tracking-widest fade-in-up font-en">
-                    info@boutiqueresidenceandco.com &nbsp;/&nbsp; English &amp; Japanese welcome
+
+                <!-- Netlify Form -->
+                <form id="intl-desk-form-jp" name="international-desk-jp" method="POST" data-netlify="true" netlify-honeypot="bot-field" class="space-y-6 fade-in-up">
+                    <input type="hidden" name="form-name" value="international-desk-jp">
+                    <p class="hidden"><label>記入しないでください: <input name="bot-field"></label></p>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                        <div>
+                            <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2 font-en">Name / お名前 <span class="text-gold">*</span></label>
+                            <input type="text" name="name" required
+                                class="w-full bg-transparent border border-white/20 px-4 py-3 text-sm text-white tracking-widest placeholder-white/20 focus:border-gold focus:outline-none transition-colors"
+                                placeholder="お名前">
+                        </div>
+                        <div>
+                            <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2 font-en">Email <span class="text-gold">*</span></label>
+                            <input type="email" name="email" required
+                                class="w-full bg-transparent border border-white/20 px-4 py-3 text-sm text-white tracking-widest placeholder-white/20 focus:border-gold focus:outline-none transition-colors"
+                                placeholder="your@email.com">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2 font-en">Enquiry Type / お問い合わせ種別</label>
+                        <select name="enquiry_type"
+                            class="w-full bg-accent border border-white/20 px-4 py-3 text-sm text-white/70 tracking-widest focus:border-gold focus:outline-none transition-colors appearance-none cursor-pointer">
+                            <option value="">— ご選択ください —</option>
+                            <option value="賃貸">賃貸物件のご相談</option>
+                            <option value="購入・投資">購入・投資物件のご相談</option>
+                            <option value="法人・リロケーション">法人・リロケーションのご相談</option>
+                            <option value="オンライン内見">オンライン内見のご希望</option>
+                            <option value="その他">その他</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-xs tracking-[0.2em] uppercase text-white/50 mb-2 font-en">Message / メッセージ <span class="text-gold">*</span></label>
+                        <textarea name="message" required rows="5"
+                            class="w-full bg-transparent border border-white/20 px-4 py-3 text-sm text-white tracking-widest placeholder-white/20 focus:border-gold focus:outline-none transition-colors resize-none"
+                            placeholder="ご希望エリア・ご予算・スケジュールなど、お気軽にお聞かせください。英語・日本語どちらでも対応します。"></textarea>
+                    </div>
+
+                    <div class="pt-2">
+                        <button type="submit"
+                            class="w-full sm:w-auto font-en tracking-[0.25em] uppercase text-sm border border-gold px-10 py-4 text-gold hover:bg-gold hover:text-white transition-all duration-300 cursor-pointer">
+                            送信する
+                        </button>
+                    </div>
+                </form>
+
+                <!-- Success message (hidden initially) -->
+                <div id="form-success-jp" class="hidden text-center py-12">
+                    <p class="text-gold text-xs tracking-[0.4em] uppercase mb-4 font-en">Thank you</p>
+                    <p class="text-white text-lg font-light tracking-widest mb-4">お問い合わせを受け付けました。</p>
+                    <p class="text-white/50 text-sm leading-loose tracking-widest">1営業日以内にご返信いたします。</p>
+                </div>
+
+                <p class="mt-10 text-white/20 text-xs tracking-widest text-center font-en">
+                    メールでのお問い合わせ: <a href="mailto:info@boutiqueresidenceandco.com" class="hover:text-gold transition-colors">info@boutiqueresidenceandco.com</a>
                 </p>
             </div>
         </section>
+
+        <script>
+        (function() {
+            var form = document.getElementById('intl-desk-form-jp');
+            var success = document.getElementById('form-success-jp');
+            if (!form) return;
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                var data = new FormData(form);
+                fetch('/', { method: 'POST', body: data })
+                    .then(function() {
+                        form.style.display = 'none';
+                        success.classList.remove('hidden');
+                    })
+                    .catch(function() {
+                        window.location.href = 'mailto:info@boutiqueresidenceandco.com?subject=International%20Desk%20%E3%81%8A%E5%95%8F%E3%81%84%E5%90%88%E3%82%8F%E3%81%9B';
+                    });
+            });
+        })();
+        </script>
 
     </main>
 
